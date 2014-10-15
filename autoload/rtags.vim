@@ -26,7 +26,6 @@ function! rtags#follow()
     if len(res) > 0
         let t = split(res[0], ':')
         exec 'e ' . t[0]
-        exec t[1]
-        exec 'normal! '. t[2] . '|'
+        call cursor(t[1], t[2])
     endif
 endfunction
